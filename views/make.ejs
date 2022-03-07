@@ -1,0 +1,11 @@
+<%- include('partials/header.ejs') %>
+<form class="flex" id='mform' action='/quiz' method='POST'>
+	<h1>Make A quiz</h1>
+	<p>Choose your diffculty</p>
+	<div class="flex flex-center">
+	  <button value="3"  class='btn easy'>Easy</button>
+	  <button value="5"  class='btn med'>Meduim</button>
+	  <button value="10" class='btn hard'>Hard</button>
+	</div>  
+</form>
+<%- include('partials/footer.ejs') %>

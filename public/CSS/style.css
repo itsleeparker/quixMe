@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+:root {
+  /*PRIMARY COLORS*/
+  --red: #ff6363;
+  --orange: #ffab76;
+  --yellow: #fffda2;
+  --green: #baffb4;
+  --white: #fff8f3;
+
+  /*NEUTRAL COLORS*/
+  --blue: #a3e4db;
+  --darkBlue: #1c6dd0;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.btn {
+  width: 25%;
+  font-size: 2ch;
+  border: none;
+  border-radius: 15px;
+  background: none;
+}
+
+.header,
+.footer {
+  background: var(--red);
+  width: 100%;
+}
+
+.header h1 {
+  color: var(--yellow);
+  text-shadow: 5px 3px #000;
+  font-size: 5ch;
+  font-weight: 900;
+}
+
+.container form button {
+  background: var(--blue);
+  margin: 15% auto;
+  min-height: 65px;
+  transition: transform 200ms;
+}
+
+.container form button:hover {
+  background: var(--darkBlue);
+  transform: scale(1.2);
+  border: 1px solid var(--blue);
+}
+
+/*MAKE FORM*/
+#mform {
+  flex-direction: column;
+}
+
+#mform h1,
+#mform p {
+  text-align: center;
+}
+
+#mform div button {
+  margin: 10% auto;
+  transition: transform 200ms;
+}
+
+#mform div button:hover {
+  transform: scale(1.2);
+  color: var(--white);
+  border: 1px solid white;
+}
+
+#mform div .easy {
+  border: 1px solid var(--green);
+}
+
+#mform div .easy:hover {
+  background: var(--green);
+}
+
+#mform div .med {
+  border: 1px solid var(--orange);
+}
+#mform div .med:hover {
+  background: var(--orange);
+}
+
+#mform div .hard {
+  border: 1px solid var(--red);
+}
+
+#mform div .hard:hover {
+  background: var(--red);
+}
