@@ -4,11 +4,19 @@ $(document).ready(err => {
 
     $('#mform .btn').click(function(e) {
       //validate the form before submisson
-      $(this).css('background', 'grey');
-      let name = $('#mform .search-box').val();
-      if (validation(name, $('#warning'))) {
-        console.log('Data Posted');
-        $.post('/make');
+      const fname = $('#mform .search-box').val();
+      const flevel = $(this).val();
+      if (validation(fname, $('#warning'))) {
+        $.post(
+          '/make',
+          {
+            name: fname,
+            level: flevel,
+          },
+          function(data, status) {
+            console.log(status);
+          },
+        );
       }
     });
   });

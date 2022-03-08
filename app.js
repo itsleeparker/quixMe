@@ -7,7 +7,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(bodyParser.json());
 //set the port listner
 let port = process.env.PORT;
 if (port == '' || port == null) {
@@ -33,9 +33,10 @@ app.post('/', (req, res) => {
 });
 
 app.post('/make', (req, res) => {
-  const name = req.body.qname;
-  const level = req.body.level.value;
-  console.log(level + ' ' + name);
+  const qdata = req.body.name;
+  const level = req.body.level;
+  console.log(qdata + ' ' + level);
+  res.redirect('/make');
 });
 
 app.listen(port, err => {
