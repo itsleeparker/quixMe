@@ -32,6 +32,12 @@ app.post('/', (req, res) => {
   res.redirect('/' + op);
 });
 
+app.post('/make', (req, res) => {
+  const name = req.body.qname;
+  const level = req.body.level.value;
+  console.log(level + ' ' + name);
+});
+
 app.listen(port, err => {
   if (!err) {
     console.log('Server Online at ' + port);

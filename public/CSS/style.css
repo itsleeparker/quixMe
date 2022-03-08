@@ -30,9 +30,10 @@ body {
   background: var(--white);
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.5fr 2fr auto;
 }
 
+/*COMMON CLASSES*/
 .flex {
   display: flex;
 }
@@ -41,6 +42,13 @@ body {
   justify-content: center;
 }
 
+.col {
+  flex-direction: column;
+}
+
+.err {
+  color: red;
+}
 .btn {
   width: 25%;
   font-size: 2ch;
@@ -62,6 +70,7 @@ body {
   font-weight: 900;
 }
 
+/*HOME PAGE CSS*/
 .container form button {
   background: var(--blue);
   margin: 15% auto;
@@ -81,7 +90,8 @@ body {
 }
 
 #mform h1,
-#mform p {
+#mform div p,
+#mform div span {
   text-align: center;
 }
 
@@ -117,4 +127,20 @@ body {
 
 #mform div .hard:hover {
   background: var(--red);
+}
+
+#mform div p {
+  font-size: 3ch;
+}
+#mform div .search-box {
+  width: 75vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2% auto;
+  font-size: 2.5ch;
+  text-align: center;
+}
+
+#mform div .search-box.errBox {
+  border: 1px solid red;
 }
