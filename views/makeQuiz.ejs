@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<section>
+	<h1 class="text-center"><%= title %></h1>
+	<form class="flex col flex-center" action='/makeQuiz' method="POST">
+		<p class="text-center">Question no <%= count %></p>
+		<div class="op-container">
+		        <span id="err"></span>
+			<ul>
+			  <li class="flex flex-center qcard">
+				<i class="fa-solid fa-a"></i>
+				<input name="qname1" type="text"  placeholder="Enter question 1"   class="search-box">
+			  </li> 
+			  <li class="flex flex-center qcard">
+				<input name="qname2" type="text"  placeholder="Enter question 2"   class="search-box">
+			  </li> 
+			  <li class="flex flex-center qcard">
+				<input name="qname3" type="text"   placeholder="Enter question 3"  class="search-box">
+			  </li> 
+			  <li class="flex flex-center qcard">
+				<input name="qname4" type="text"  placeholder="Enter question 4"   class="search-box">
+			  </li> 
+			</ul>
+		</div>
+	</form>
+</section>
+
+<%- include("partials/footer.ejs") %>

@@ -26,6 +26,16 @@ app.get('/take', (req, res) => {
   res.render('take');
 });
 
+//set a route for the quiz making
+app.get('/quiz/:qname/:count', (req, res) => {
+  const topic = req.params.qname;
+  const count = req.params.count;
+  res.render('makeQuiz', {
+    title: topic,
+    count: count,
+  });
+});
+
 app.post('/', (req, res) => {
   const op = req.body.option;
   console.log(op);
@@ -33,10 +43,10 @@ app.post('/', (req, res) => {
 });
 
 app.post('/make', (req, res) => {
-  const qdata = req.body.name;
-  const level = req.body.level;
+  const qdata = req.body.qname;
+  const level = parseInt(req.body.level);
   console.log(qdata + ' ' + level);
-  res.redirect('/make');
+  res.redirect('/quiz/' + qdata + '/' + level);
 });
 
 app.listen(port, err => {

@@ -57,10 +57,23 @@ body {
   background: none;
 }
 
+.search-box {
+  width: 75vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2% auto;
+  font-size: 2.5ch;
+  text-align: center;
+}
+
 .header,
 .footer {
   background: var(--red);
   width: 100%;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .header h1 {
@@ -132,15 +145,6 @@ body {
 #mform div p {
   font-size: 3ch;
 }
-#mform div .search-box {
-  width: 75vw;
-  border: 1px solid black;
-  border-radius: 15px;
-  margin: 2% auto;
-  font-size: 2.5ch;
-  text-align: center;
-}
-
 #mform div .search-box.errBox {
   border: 1px solid red;
 }

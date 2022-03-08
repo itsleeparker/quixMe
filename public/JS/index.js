@@ -1,25 +1,16 @@
-$(document).ready(err => {
-  $('#mform').submit(e => {
+$('form').submit(e => {
+  const fname = $('#mform .search-box').val();
+  if (!validation($('#mform .search-box').val(), $('#err'))) {
     e.preventDefault();
-
-    $('#mform .btn').click(function(e) {
-      //validate the form before submisson
-      const fname = $('#mform .search-box').val();
-      const flevel = $(this).val();
-      if (validation(fname, $('#warning'))) {
-        $.post(
-          '/make',
-          {
-            name: fname,
-            level: flevel,
-          },
-          function(data, status) {
-            console.log(status);
-          },
-        );
-      }
+  } else {
+    $('#mform button').click(e => {
+      $.post('/make', {level: $(this).val(), qname: fname}, err => {
+        if (err) {
+          throw err;
+        }
+      });
     });
-  });
+  }
 });
 
 const validation = (str, errMsg) => {
