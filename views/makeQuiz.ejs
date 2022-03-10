@@ -1,26 +1,28 @@
 <%- include("partials/header.ejs") %>
 <section class = "maker-container">
-	<h1 class="text-center"><%= title %></h1>
+	<h1 class="text-center" id="title" ><%= title %></h1>
 	<form class="flex col flex-center" id="oform" action='/makeQuiz' method="POST">
-		<p class="text-center">Question no <%= count %></p>
+		<p class="text-center">Question no <span id="count"><%= count %></span></p>
 		<div class="op-container">
-		        <span id="err"></span>
+		        <p id="err" class="err text-center"></p>
 			<ul>
-			  <li  class="flex flex-center qcard op">
-				
+			  <li>
+				<input type="text" id="ques" class="search-box" placeholder="Enter your question here">
+			  </li>
+			  <li  class="op flex flex-center qcard">	
 				<i class= "fa-solid fa-a"></i> 
-				<input name="qname1" type="text"  placeholder="Enter question 1"   class="search-box">
+				<input name="qname1" type="text"  placeholder="Enter question 1"    class="search-box">
 			  </li> 
-			  <li class="flex flex-center qcard op">
-				<i class= "fa-solid fa-b "></i> 
+			  <li class="op flex flex-center qcard">
+				<i class= "fa-solid fa-b"></i> 
 				<input name="qname2" type="text"  placeholder="Enter question 2"   class="search-box">
 			  </li> 
-			  <li class="flex flex-center qcard op">
+			  <li class="op flex flex-center qcard">
 				
-				<i class= "fa-solid fa-c op"></i> 
+				<i class= "fa-solid fa-c"></i> 
 				<input name="qname3" type="text"   placeholder="Enter question 3"  class="search-box">
 			  </li> 
-			  <li class="flex flex-center qcard op">
+			  <li class="op flex flex-center qcard">
 				<i class= "fa-solid fa-d"></i> 
 				<input name="qname4" type="text"  placeholder="Enter question 4"   class="search-box">
 			  </li> 

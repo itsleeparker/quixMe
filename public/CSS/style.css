@@ -194,6 +194,10 @@ body {
   margin-left: 2em;
 }
 
+#ques.search-box {
+  width: 75vw;
+  margin: 3% 11vw;
+}
 .op-container .search-box:focus {
   border: none;
 }

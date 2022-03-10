@@ -49,6 +49,14 @@ app.post('/make', (req, res) => {
   res.redirect('/quiz/' + qdata + '/' + level);
 });
 
+app.post('/makeQuiz', (req, res) => {
+  const ans = req.body.ans;
+  const count = parseInt(req.body.count);
+  const title = req.body.title;
+  console.log(ans + ' ' + count);
+  //res.redirect('/quiz/' + title + '/' + count);
+});
+
 app.listen(port, err => {
   if (!err) {
     console.log('Server Online at ' + port);

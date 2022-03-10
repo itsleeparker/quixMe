@@ -13,30 +13,54 @@ $('#mform').submit(e => {
   }
 });
 
-$('.op').click(e => {
-  $(this).addClass('correct');
+//code for selecting only one option
+$('.qcard').each((index, el) => {
+  $(el).click(e => {
+    $(el).addClass('correct');
+    $('.qcard')
+      .not(el)
+      .removeClass('correct');
+  });
 });
 
+//code for options validation
 $('#oform').submit(e => {
-  e.preventDefault();
-  if (!validateOptions($('.op input'))) {
+  op = $('.op input');
+  op.each((index, el) => {
+    //check if all the boxes are filled and option is selected
+    if (validateOptions(el)) {
+      $('#err').text('Options cannot be empty');
+      e.preventDefault();
+    }
+  });
+  if (!checkClass($('li'), 'correct')) {
     e.preventDefault();
-    $('#err').text('boxes cannot be empty!!');
-    $('#err').addClass('err');
+    $('#err').text('Select the right answer');
+  } else if (validateOptions($('#ques').val())) {
+    $('#err').text('Question cannot be empty');
+    e.preventDefault();
+  } else {
+    const answer = $('.correct input').val();
+    const qcount = $('#count').text();
+    $.post(
+      '/makeQuiz',
+      {title: $('#title').text(), ans: answer, count: qcount},
+      err => {
+        if (err) {
+          throw err;
+        }
+      },
+    );
   }
 });
 
+const checkClass = (item, cl) => {
+  return $(item).hasClass(cl);
+};
+
 const validateOptions = op => {
   //check if any of the input boxes are empty
-  op.each((index, item) => {
-    let data = '' + $(item).val();
-    console.log(data);
-    if (data === '') {
-      //start fixing the code from , the input returning complete emptyness check with that then procees with backend code
-      return false;
-    }
-  });
-  return true;
+  return $(op).val().length === 0;
 };
 
 const validation = (str, errMsg) => {
