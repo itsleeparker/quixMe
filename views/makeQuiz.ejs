@@ -1,26 +1,32 @@
 <%- include("partials/header.ejs") %>
-<section>
+<section class = "maker-container">
 	<h1 class="text-center"><%= title %></h1>
-	<form class="flex col flex-center" action='/makeQuiz' method="POST">
+	<form class="flex col flex-center" id="oform" action='/makeQuiz' method="POST">
 		<p class="text-center">Question no <%= count %></p>
 		<div class="op-container">
 		        <span id="err"></span>
 			<ul>
-			  <li class="flex flex-center qcard">
-				<i class="fa-solid fa-a"></i>
+			  <li  class="flex flex-center qcard op">
+				
+				<i class= "fa-solid fa-a"></i> 
 				<input name="qname1" type="text"  placeholder="Enter question 1"   class="search-box">
 			  </li> 
-			  <li class="flex flex-center qcard">
+			  <li class="flex flex-center qcard op">
+				<i class= "fa-solid fa-b "></i> 
 				<input name="qname2" type="text"  placeholder="Enter question 2"   class="search-box">
 			  </li> 
-			  <li class="flex flex-center qcard">
+			  <li class="flex flex-center qcard op">
+				
+				<i class= "fa-solid fa-c op"></i> 
 				<input name="qname3" type="text"   placeholder="Enter question 3"  class="search-box">
 			  </li> 
-			  <li class="flex flex-center qcard">
+			  <li class="flex flex-center qcard op">
+				<i class= "fa-solid fa-d"></i> 
 				<input name="qname4" type="text"  placeholder="Enter question 4"   class="search-box">
 			  </li> 
 			</ul>
 		</div>
+		<button class="btn nxt-btn" value=<%= count %>>Next</button>
 	</form>
 </section>
 

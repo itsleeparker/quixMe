@@ -4,11 +4,11 @@
   --red: #ff6363;
   --orange: #ffab76;
   --yellow: #fffda2;
-  --green: #baffb4;
+  --green: #32de84;
   --white: #fff8f3;
 
   /*NEUTRAL COLORS*/
-  --blue: #a3e4db;
+  --blue: #1da1f2;
   --darkBlue: #1c6dd0;
 }
 
@@ -76,6 +76,18 @@ body {
   text-align: center;
 }
 
+.nxt-btn {
+  background-color: var(--blue);
+  border-radius: 10px;
+  color: #fff;
+  max-width: 5em;
+  min-height: 2em;
+  transition: transform 200ms ease-in;
+}
+.nxt-btn:hover:focus {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
 .header h1 {
   color: var(--yellow);
   text-shadow: 5px 3px #000;
@@ -147,4 +159,47 @@ body {
 }
 #mform div .search-box.errBox {
   border: 1px solid red;
+}
+
+/*Quiz maker page option pallet css*/
+.maker-continer form {
+  width: 100%;
+  position: relative;
+}
+
+.maker-container .op-container {
+  width: 100%;
+}
+
+.op-container .qcard {
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 1.5em auto;
+  max-width: 80vw;
+  align-items: center;
+  padding: 7px;
+}
+
+.op-container .qcard.correct {
+  background-color: var(--green);
+}
+
+.op-container .search-box {
+  background: none;
+  width: 50vw;
+  border: none;
+  border-radius: 0;
+  font-size: 2ch;
+  margin: 0;
+  margin-left: 2em;
+}
+
+.op-container .search-box:focus {
+  border: none;
+}
+
+.maker-container form .nxt-btn {
+  position: absolute;
+  right: 10vw;
+  bottom: 5vh;
 }
